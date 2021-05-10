@@ -1,0 +1,277 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTIVITY Prediction</title>
+
+   
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+    
+
+
+</head>
+
+<body>
+
+    <br>
+<div class="container">
+
+        <form action="\predict" method="post">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 align="center"  class="card-title">Performance Prediction</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <br>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Age</h5>
+                            <input type="text" name="age">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Gender</h5>
+                            <select name="gender">
+                                <option >Select</option>
+                                <option value="0">Female</option>
+                                <option value="1">Male</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">EducationBackground</h5>
+                            <select name="educationbackground">
+                                <option >Select</option>
+                                <option value="0" >Human Resources</option>
+                                <option value="1">Life Sciences</option>
+                                <option value="2">Marketing</option>
+                                <option value="3">Medical</option>
+                                <option value="4">Other</option>
+                                <option value="5">Technical Degree</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">MaritalStatus</h5>
+                            <select name="maritalstatus">
+                                <option >Select</option>
+                                <option value="0" >Divorced</option>
+                                <option value="1">Married</option>
+                                <option value="2">Single</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">EmpDepartment</h5>
+                            <select name="empdepartment">
+                                <option >Select</option>
+                                <option value="0">Data Science</option>
+                                <option value="1">Development</option>
+                                <option value="2">Finance</option>
+                                <option value="3">Human Resources</option>
+                                <option value="4">Research & Development</option>
+                                <option value="5">Sales</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">EmpJobRole</h5>
+                            <select name="empjobrole">
+                                <option >Select</option>
+                                <option value="0">Finance Manager</option>
+                                <option value="1">Healthcare Representative</option>
+                                <option value="2">Human Resources</option>
+                                <option value="3">Laboratory Technician</option>
+                                <option value="4">Manager</option>
+                                <option value="5">Manager R&D</option>
+                                <option value="6">Manufacturing Director</option>
+                                <option value="7">Research Director</option>
+                                <option value="8">Research Scientist</option>
+                                <option value="9">Sales Executive</option>
+                                <option value="10">Sales Represntative</option>
+                                <option value="11">Senior Manager R&D</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">BusinesTravlFrequency</h5>
+                            <select name="btf">
+                                <option >Select</option>
+                                <option value="0">Non-travel</option>
+                                <option value="1">Travel_Frequently</option>
+                                <option value="2">Travel_Rarely</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">DistanceFromHome</h5>
+                            <input type="text" name="distancefromhome">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">EmpEducationLevel</h5>
+                            <input type="text" name="EmpEducationLevel">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">EmpEnvironmentSatisfaction</h5>
+                            <input type="text" name="EmpEnvironmentSatisfaction">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">EmpHourlyRate</h5>
+                            <input type="text" name="EmpHourlyRate">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">EmpJobInvolvement</h5>
+                            <input type="text" name="EmpJobInvolvement">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">EmpJobLevel</h5>
+                            <input type="text" name="EmpJobLevel">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">EmpJobSatisfaction</h5>
+                            <input type="text" name="EmpJobSatisfaction">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">NumCompanesWorked</h5>
+                            <input type="text" name="NumCompanesWorked">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">OverTime</h5>
+                            <select name="overtime">
+                                <option >Select</option>
+                                <option value="0">NO</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">EmpLastSalaryHikePercent</h5>
+                            <input type="text" name="EmpLastSalaryHikePercent">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">EmpRelationshipSatisfaction</h5>
+                            <input type="text" name="EmpRelationshipSatisfaction">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">TotalWorkExperienceInYears</h5>
+                            <input type="text" name="TotalWorkExperienceInYears">
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <br>
+                
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+
+    </div>
+    
+
+
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
